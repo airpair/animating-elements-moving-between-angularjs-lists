@@ -26,7 +26,7 @@ What _outgoing_ and _incoming_ mean is that their addition to and removal from t
 </ul>
 ```
 
-where the `moveToListX` functions remove from each list and add to the other
+where the `moveToListX` functions move an item from one list to the other
 
 ```javascript
 $scope.moveToListB = function(item) {
