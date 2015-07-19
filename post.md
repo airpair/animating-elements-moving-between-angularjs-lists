@@ -82,7 +82,7 @@ We can control the CSS transition with a single style rule on the `.ng-anchor-in
 }
 ```
 
-You can have a more complex transition if you want by also having a transition on `.ng-anchor-out`, but this is not necessary for this case. You can see the [https://docs.angularjs.org/api/ngAnimate](docs for ngAnimate) for more information.
+You can have a more complex transition if you want by also having a transition on `.ng-anchor-out`, but this is not necessary for this case. You can see the [docs for ngAnimate](https://docs.angularjs.org/api/ngAnimate) for more information.
 
 Plunker
 -------
