@@ -61,7 +61,9 @@ and where the CSS transitions are defined as:
 }
 ```
 
-The above rules work because at the appropriate points in the addition and removal of elements from `ng-repeat` lists, Angular adds the classes on the elements and allows the browser to perform the CSS transitions. You can look into the [ngAnimate docs for CSS transitions](https://docs.angularjs.org/api/ngAnimate#css-based-animations) for more information on these.
+The above rules work because at the appropriate points in the addition and removal of elements from `ng-repeat` lists, Angular adds the classes on the elements and allows the browser to perform the CSS transitions. 
+
+You can [see the above example in this Plunker](http://plnkr.co/edit/bhoujecibX77jGUTATHR?p=preview), and you can look into the [ngAnimate docs for CSS transitions](https://docs.angularjs.org/api/ngAnimate#css-based-animations) for more information.
 
 Add ng-animate-ref attribute on wrapper elements
 ------------------------------------------------
