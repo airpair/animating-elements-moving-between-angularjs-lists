@@ -15,18 +15,27 @@ What _outgoing_ and _incoming_ mean is that their addition to and removal from t
 
 ```html
 <ul class="list">
-  <li class="item" ng-repeat="item in listA" ng-click="toB(item)">
+  <li class="item" ng-repeat="item in listA" ng-click="moveToListB(item)">
     Item: {{ item.id }}
   </li>
 </ul>
 <ul class="list">
-  <li class="item" ng-repeat="item in listB" ng-click="toA(item)">
+  <li class="item" ng-repeat="item in listB" ng-click="moveToListA(item)">
     Item: {{ item.id }}
   </li>
 </ul>
 ```
 
-with CSS transitions defined as:
+where the `moveToListX` functions remove from each list and move to the other
+
+```javascript
+$scope.moveToListB = function(item) {
+  $scope.listB.push(item);
+  $scope.listA.splice($scope.listA.indexOf(item), 1);
+};
+```
+
+and where the CSS transitions are defined as:
 
 ```css
 /* New element set to 0 height after addition to DOM... */
@@ -52,7 +61,7 @@ with CSS transitions defined as:
 }
 ```
 
-The above rules work because at the appropriate points in the addition and removal of elements from `ng-repeat` lists, Angular adds the classes on the elements and allows the browser to perform the CSS transitions.
+The above rules work because at the appropriate points in the addition and removal of elements from `ng-repeat` lists, Angular adds the classes on the elements and allows the browser to perform the CSS transitions. You can look into the [ngAnimate docs for CSS transitions](https://docs.angularjs.org/api/ngAnimate#css-based-animations) for more information on these.
 
 Add ng-animate-ref attribute on wrapper elements
 ------------------------------------------------
@@ -61,12 +70,12 @@ Once the list elements are subject to `.ng-enter` and `.ng-leave` transitions, w
 
 ```html
 <ul class="list" title="List A">
-  <li class="item" ng-repeat="item in listA" ng-click="toB(item)">
+  <li class="item" ng-repeat="item in listA" ng-click="moveToListB(item)">
     <span class="item-contents" ng-animate-ref="{{ item.id }}">Item: {{ item.id }}</span>
   </li>
 </ul>
 <ul class="list" title="List B">
-  <li class="item" ng-repeat="item in listB" ng-click="toA(item)">
+  <li class="item" ng-repeat="item in listB" ng-click="moveToListA(item)">
     <span class="item-contents" ng-animate-ref="{{ item.id }}">Item: {{ item.id }}</span>
   </li>
 </ul>
