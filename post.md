@@ -1,3 +1,7 @@
+This post is aimed at those with some experiance of using AngularJS: specifically  controllers, templates, and the `ng-repeat` directive.
+
+-----
+
 Animating elements between parts of an application can be tricky. The beauty of `ng-repeat` means we can declare that a list, such as a `ul`, should represent a data model, such as an `Array` of data, and the list keeps up to date with whatever changes we make to the underlying model. The tricky bit comes when we want to view not just current state of the model, but transitions between states, such as 
 
 - removal of an item from a list,
