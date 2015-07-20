@@ -13,7 +13,7 @@ Outgoing and incoming transitions
 
 What _outgoing_ and _incoming_ mean is that their addition to and removal from the DOM are subject to `.ng-enter` and `.ng-leave` transitions, either on themselves, or on a parent element. For example, we can animate the heights of elements to or from 0 when they are added or removed from a list:
 
-```html
+```markup
 <ul class="list">
   <li class="item" ng-repeat="item in listA" ng-click="moveToListB(item)">
     Item: {{ item.id }}
@@ -70,7 +70,7 @@ Add ng-animate-ref attribute on wrapper elements
 
 Once the list elements are subject to `.ng-enter` and `.ng-leave` transitions, we add a wrapper `span` to each element, with an `ng-animate-ref` attribute containing the ID of the item, so Angular can match each element leaving the DOM with one entering.
 
-```html
+```markup
 <ul class="list" title="List A">
   <li class="item" ng-repeat="item in listA" ng-click="moveToListB(item)">
     <span class="item-contents" ng-animate-ref="{{ item.id }}">Item: {{ item.id }}</span>
