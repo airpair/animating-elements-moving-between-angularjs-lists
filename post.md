@@ -12,8 +12,8 @@ Prior to Angular 1.4, it was fairly straightforward to animate addition or remov
 
 The key to this is the `ng-animate-ref` attribute. If the ref-value on an _outgoing_ element matches an element on an _incoming_ element, then Angular clones the outgoing element, inserts the clone positioned absolutely on the page, and using CSS transitions moves it from the position of the outgoing to the position of the incoming.
 
-Outgoing and incoming transitions
----------------------------------
+Outgoing and incoming transitions in AngularJS
+----------------------------------------------
 
 What _outgoing_ and _incoming_ mean is that their addition to and removal from the DOM are subject to `.ng-enter` and `.ng-leave` transitions, either on themselves, or on a parent element. For example, we can animate the heights of elements to or from 0 when they are added or removed from a list:
 
@@ -69,8 +69,8 @@ The above rules work because at the appropriate points in the addition and remov
 
 You can [see the above example in this Plunker](http://plnkr.co/edit/bhoujecibX77jGUTATHR?p=preview), and you can look into the [ngAnimate docs for CSS transitions](https://docs.angularjs.org/api/ngAnimate#css-based-animations) for more information.
 
-Add ng-animate-ref attribute on wrapper elements
-------------------------------------------------
+Add ng-animate-ref attribute to transition between ng-repeat lists
+------------------------------------------------------------------
 
 Once the list elements are subject to `.ng-enter` and `.ng-leave` transitions, we add a wrapper `span` to each element, with an `ng-animate-ref` attribute containing the ID of the item, so Angular can match each element leaving the DOM with one entering.
 
